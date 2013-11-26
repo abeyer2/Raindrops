@@ -13,6 +13,9 @@ void draw(){
   for(int i = 0; i < raindrops.length; i++){
    raindrops[i].display();
    raindrops[i].move();
+   if(raindrops[i].loc.y > height + raindrops[i].d){
+   raindrops[i].reset();
+  }
   }
   catcher.display();
   catcher.update();
