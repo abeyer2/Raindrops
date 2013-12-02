@@ -16,9 +16,13 @@ void draw(){
    if(raindrops[i].loc.y > height + raindrops[i].d){
    raindrops[i].reset();
   }
+  if(catcher.checkCatcher(raindrops[i]) == true){
+    raindrops[i].reset();
+  }
   }
   catcher.display();
   catcher.update();
+  
 }
 
 

@@ -12,9 +12,13 @@ class Catcher{
   loc.set(mouseX,height-d);
  } 
  
-  void checkCatcher(raindrops drop){
+  boolean checkCatcher(raindrops drop){
   if(loc.dist(drop.loc) < d/2 + drop.d/2){
    drop.reset();
+   return true;
   } 
+  else{
+  return false;
+  }
   }
 }
