@@ -10,7 +10,7 @@ void draw(){
   currentTime = millis();
   timeChange = currentTime-oldTime;
   if(timeChange >= 2000){
-   fill(random(255),random(255),random(255));
+   fill(0,random(255),random(255));
   ellipse(random(width),random(height),10,10);
    oldTime = currentTime; 
   }
