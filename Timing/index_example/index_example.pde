@@ -1,7 +1,10 @@
 raindrops[] raindrops = new raindrops[100];
 int index = 0;
+int oldTime = 0;
+int currentTime = 0;
+int timeChange;
 void setup(){
-  size(200,200);
+  size(500,500);
   for(int i=0;i < raindrops.length; i++){
    raindrops[i] = new raindrops(); 
   }
@@ -17,8 +20,18 @@ void draw(){
    raindrops[i].reset(); 
   }
   }
+  currentTime = millis();
+  timeChange = currentTime - oldTime;
+  if (timeChange >= 3000) {
+    fill(0, random(255), random(255));
+    ellipse(random(width), random(height), 10, 10); 
+    oldTime = currentTime;
+    index++;
+  }
 }
  
-void mousePressed(){
- index++;
-} 
+//void mousePressed(){
+// index++;
+//} 
+
+ 
