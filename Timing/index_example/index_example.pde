@@ -16,9 +16,9 @@ void draw(){
   for(int i=0;i<= index;i++){
    raindrops[i].display();
    raindrops[i].move(); 
-  if(raindrops[i].loc.y > height + raindrops[i].d){
-   raindrops[i].reset(); 
-  }
+//  if(raindrops[i].loc.y > height + raindrops[i].d){
+//   raindrops[i].reset(); 
+//  }
   }
   currentTime = millis();
   timeChange = currentTime - oldTime;
