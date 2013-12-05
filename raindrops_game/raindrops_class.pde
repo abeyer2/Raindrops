@@ -10,7 +10,7 @@ class raindrops {
   raindrops() {
      d = 10;
     loc = new PVector(random(0, width), -d);
-    vel = new PVector(0, random(0, 2));
+    vel = new PVector(0, random(1, 2));
     acc = new PVector(0, .0001);
    
 
