@@ -1,12 +1,12 @@
- raindrops[] raindrops = new raindrops[10];
+ raindrops[] raindrops = new raindrops[100];
 Catcher catcher;
-int index = 0;
+int index = 1;
 int oldTime = 0;
 int currentTime = 0;
 int timeChange;
 void setup(){
   size(300,300); 
-  for(int i = 0; i < index; i++){
+  for(int i = 0; i < raindrops.length; i++){
    raindrops[i] = new raindrops(); 
   }
   catcher = new Catcher();
@@ -14,7 +14,7 @@ void setup(){
     
 void draw(){
   background(0,100,200);
-  for(int i = 0; i < raindrops.length; i++){
+  for(int i = 0; i < index; i++){
    raindrops[i].display();
    raindrops[i].move();
    if(raindrops[i].loc.y > height + raindrops[i].d){
