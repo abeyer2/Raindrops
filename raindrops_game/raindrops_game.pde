@@ -1,8 +1,12 @@
-raindrops[] raindrops = new raindrops[1];
+ raindrops[] raindrops = new raindrops[10];
 Catcher catcher;
+int index = 0;
+int oldTime = 0;
+int currentTime = 0;
+int timeChange;
 void setup(){
   size(300,300); 
-  for(int i = 0; i < raindrops.length; i++){
+  for(int i = 0; i < index; i++){
    raindrops[i] = new raindrops(); 
   }
   catcher = new Catcher();
@@ -17,12 +21,17 @@ void draw(){
    raindrops[i].reset();
   }
   if(catcher.checkCatcher(raindrops[i]) == true){
-    raindrops[i].reset();
+    raindrops[i].goAway();
   }
   }
   catcher.display();
   catcher.update();
-  
+  currentTime = millis();
+  timeChange = currentTime - oldTime;
+  if (timeChange >= 3000) { 
+    oldTime = currentTime;
+    index++;
+  }
 }
 
 

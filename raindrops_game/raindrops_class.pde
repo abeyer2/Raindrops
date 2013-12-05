@@ -8,15 +8,15 @@ class raindrops {
 
 
   raindrops() {
-    loc = new PVector(random(0, width), 0);
+     d = 10;
+    loc = new PVector(random(0, width), -d);
     vel = new PVector(0, random(0, 2));
     acc = new PVector(0, .0001);
-    d = 10; 
+   
 
   }
 
   void display() {
-
     ellipse(loc.x,loc.y,d,d);
   }
 
@@ -29,6 +29,11 @@ class raindrops {
     void reset(){
       loc.set(random(width), 0);
       vel.set(0,random(0,2));
+    }
+    void goAway(){
+     loc.set(height*2,0);
+     vel.set(0,0);
+     acc.set(0,0); 
     }
     
  
