@@ -5,13 +5,14 @@ class Catcher{
  loc = new PVector(mouseX,height-d);
  d = 30;
  } 
+ //
  void display(){
   ellipse(loc.x,loc.y,d,d);
  } 
  void update(){
   loc.set(mouseX,height-d);
  } 
- 
+ //when the distance between the catcher and the raindrop is 0, the raindrop will be removed from the screen
   boolean checkCatcher(raindrops drop){
   if(loc.dist(drop.loc) < d/2 + drop.d/2){
    drop.reset();
