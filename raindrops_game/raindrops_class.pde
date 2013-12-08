@@ -5,19 +5,20 @@ class raindrops {
   PVector acc;
   int d; 
   float size;
-
+  PImage raindrop;
 
   raindrops() {
      d = 10;
     loc = new PVector(random(0, width), -d);
     vel = new PVector(0, random(1, 2));
     acc = new PVector(0, .0001);
-   
+   raindrop = loadImage("raindrop.png");
 
   }
 //displays a raindrop at a random spot above the screen
   void display() {
-    ellipse(loc.x,loc.y,d,d);
+//    ellipse(loc.x,loc.y,d,d);
+      image(raindrop,loc.x,loc.y,d,d);
   }
 //Causes the raindrop to fall
   void move() {
