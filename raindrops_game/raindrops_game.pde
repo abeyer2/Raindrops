@@ -6,6 +6,7 @@ int oldTime = 0;
 int currentTime = 0;
 int timeChange;
 int score = 0;
+//PImage gameOver;
 void setup(){
   size(300,300); 
   //assigning values to the PVectors raindrops and catcher
@@ -13,7 +14,9 @@ void setup(){
    raindrops[i] = new raindrops(); 
   }
   catcher = new Catcher();
+//  gameOver = loadImage("game_over2.pjg");
   textSize(35);
+  textAlign(CENTER);
 }
     
 void draw(){
@@ -26,6 +29,7 @@ void draw(){
    //if the raindrop hits the ground, it goes back to the top
    if(raindrops[i].loc.y > height + raindrops[i].d){
    raindrops[i].reset();
+//     image(gameOver,0,0,width,height);
   }
   //when the raindrop and catcher intersect, the 1 will be added to the score and the raindrop will disappear from the screen
   if(catcher.checkCatcher(raindrops[i]) == true){
