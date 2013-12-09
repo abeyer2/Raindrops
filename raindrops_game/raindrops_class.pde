@@ -12,13 +12,14 @@ class raindrops {
     loc = new PVector(random(0, width), -d);
     vel = new PVector(0, random(1, 2));
     acc = new PVector(0, .0001);
-   raindrop = loadImage("raindrop.png");
+   raindrop = loadImage("raindrop3.png");
 
   }
 //displays a raindrop at a random spot above the screen
   void display() {
+    imageMode(CENTER);
 //    ellipse(loc.x,loc.y,d,d);
-      image(raindrop,loc.x,loc.y,d,d);
+      image(raindrop,loc.x,loc.y,15,15);
   }
 //Causes the raindrop to fall
   void move() {
