@@ -8,6 +8,7 @@ int timeChange;
 int score = 0;
 PImage stopGame;
 boolean gameOver = false;
+boolean start = true;
 
 void setup(){
   size(300,300); 
@@ -23,6 +24,13 @@ void setup(){
 }
     
 void draw(){
+  //Start Screen
+  if(start == true){
+   background(128,128,255);
+   textAlign(CENTER);
+   text("Click to Play",width/2,height/2); 
+  }
+  else{
   background(0,100,200);
   text(score,25,35);
   //displays raindrop and causes it to move
@@ -56,7 +64,12 @@ void draw(){
     oldTime = currentTime;
     index++;
   }
+  }
 }
-
+ 
+ 
+void mousePressed(){
+ start = false; 
+}
 
  
