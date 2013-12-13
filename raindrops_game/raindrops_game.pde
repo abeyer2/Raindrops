@@ -10,6 +10,8 @@ PImage stopGame;
 boolean gameOver = false;
 boolean start = true;
 int die;
+int rx,ry,rw,rh;
+
 
 void setup() {
   size(300, 300); 
@@ -22,6 +24,7 @@ void setup() {
   die = 3;
   textSize(35);
   textAlign(CENTER);
+
 }
 
 void draw() {
@@ -50,7 +53,6 @@ void draw() {
         imageMode(CORNER);
         image(stopGame, 0, 0, width, height);
         raindrops[i].goAway();
-        die = 3;
       }
       //when the raindrop and catcher intersect, the 1 will be added to the score and the raindrop will disappear from the screen
       if (catcher.checkCatcher(raindrops[i]) == true) {
