@@ -25,4 +25,9 @@ image(umbrella,loc.x,loc.y,50,50);
   return false;
   }
   }
+  void catcherGoAway(){
+   if(gameOver == true){
+    loc.set(height*2,0);
+   } 
+  }
 }

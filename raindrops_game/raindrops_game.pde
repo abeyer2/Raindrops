@@ -43,7 +43,7 @@ void draw() {
       raindrops[i].move();
       //if the raindrop hits the ground, it goes back to the top
 
-      if (raindrops[i].loc.y > height && raindrops[i].loc.y < height + raindrops[i].d/6) {
+      if (raindrops[i].loc.y >= height && raindrops[i].loc.y < height + raindrops[i].d/6) {
         die--;
       }
       if (die == 0) {
@@ -53,6 +53,7 @@ void draw() {
         imageMode(CORNER);
         image(stopGame, 0, 0, width, height);
         raindrops[i].goAway();
+        catcher.catcherGoAway();
       }
       //when the raindrop and catcher intersect, the 1 will be added to the score and the raindrop will disappear from the screen
       if (catcher.checkCatcher(raindrops[i]) == true) {
