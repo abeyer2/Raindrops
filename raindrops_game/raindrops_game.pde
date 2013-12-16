@@ -1,5 +1,5 @@
 //Create array of raindrops
-raindrops[] raindrops = new raindrops[100];
+raindrops[] raindrops = new raindrops[150];
 Catcher catcher;
 int index = 1;
 int oldTime = 0;
@@ -84,6 +84,16 @@ void draw() {
     }
   }
   println(die);
+  if(mousePressed == true && mouseX>rx && mouseX<rx+rw && mouseY>ry && mouseY<ry+rh){
+    for (int i = 0; i < index; i++){
+     raindrops[i].reset(); 
+    }
+    die = 3;
+    start = true;
+    gameOver = false;
+    index = 1;
+    score = 0;
+  }
 }
 
 
