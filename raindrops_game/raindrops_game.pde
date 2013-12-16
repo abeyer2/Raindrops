@@ -25,6 +25,10 @@ void setup() {
   die = 3;
   textSize(35);
   textAlign(CENTER);
+  rx = 65;
+  ry = 200;
+  rw = 165;
+  rh = 35;
  
 
 }
@@ -56,6 +60,12 @@ void draw() {
         image(stopGame, 0, 0, width, height);
         raindrops[i].goAway();
         catcher.catcherGoAway();
+        fill(128,128,255);
+        rect(rx,ry,rw,rh);
+        fill(255);
+        textAlign(CORNER);
+        textSize(15);
+        text("CLICK TO PLAY AGAIN",rx+5,ry+20);
       }
       //when the raindrop and catcher intersect, the 1 will be added to the score and the raindrop will disappear from the screen
       if (catcher.checkCatcher(raindrops[i]) == true) {
