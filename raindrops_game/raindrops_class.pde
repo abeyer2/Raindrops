@@ -37,6 +37,12 @@ class raindrops {
      vel.set(0,0);
      acc.set(0,0); 
     }
-    
+ 
+   void die(){
+   if(loc.y >= height){
+    die--;
+    goAway();
+   } 
+   }   
  
 }

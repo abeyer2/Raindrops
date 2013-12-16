@@ -48,12 +48,10 @@ void draw() {
       raindrops[i].display();
       raindrops[i].move();
       //if the raindrop hits the ground, it goes back to the top
-
-      if (raindrops[i].loc.y >= height && raindrops[i].loc.y < height + raindrops[i].d/6) {
-        die--;
-      }
+     raindrops[i].die();
       if (die == 0) {
         gameOver = true;
+        
       }
       if (gameOver == true) { 
         imageMode(CORNER);
