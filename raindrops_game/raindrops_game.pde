@@ -38,6 +38,7 @@ void draw() {
   if (start == true) {
     background(128, 128, 255);
     textAlign(CENTER);
+    textSize(35);
     text("Click to Play", width/2, height/2);
   }
   else {
