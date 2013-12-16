@@ -11,10 +11,11 @@ boolean gameOver = false;
 boolean start = true;
 int die;
 int rx,ry,rw,rh;
-
+PImage rainFall;
 
 void setup() {
-  size(300, 300); 
+  rainFall = loadImage("scene.png");
+  size(rainFall.width,rainFall.height); 
   //assigning values to the PVectors raindrops and catcher
   for (int i = 0; i < raindrops.length; i++) {
     raindrops[i] = new raindrops();
@@ -24,6 +25,7 @@ void setup() {
   die = 3;
   textSize(35);
   textAlign(CENTER);
+ 
 
 }
 
@@ -35,7 +37,7 @@ void draw() {
     text("Click to Play", width/2, height/2);
   }
   else {
-    background(0, 100, 200);
+    background(rainFall);
     text(score, 25, 35);
     //displays raindrop and causes it to move
     for (int i = 0; i < index; i++) {
