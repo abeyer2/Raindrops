@@ -1,5 +1,5 @@
 //Create array of raindrops
-raindrops[] raindrops = new raindrops[150];
+raindrops[] raindrops = new raindrops[250];
 Catcher catcher;
 int index = 1;
 int oldTime = 0;
@@ -46,7 +46,9 @@ void draw() {
   }
   else {
     background(rainFall);
-    text(score, 25, 35);
+    textAlign(CORNER);
+    text("SCORE", 10, 35);
+    text(score, 10,75);
     //displays raindrop and causes it to move
     for (int i = 0; i < index; i++) {
       raindrops[i].display();
@@ -90,8 +92,11 @@ void draw() {
       oldTime = currentTime;
       index++;
        }
+       textAlign(CENTER);
+       text("LIVES",255,35);
+       text(die,290,75);
   }
-  println(die);
+  
   //Restart Button
   //When pressed, the game will go to the start screen and the score will be set back to 0
   if(mousePressed == true && mouseX>rx && mouseX<rx+rw && mouseY>ry && mouseY<ry+rh){
