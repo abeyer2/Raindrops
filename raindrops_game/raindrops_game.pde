@@ -55,6 +55,7 @@ void draw() {
         gameOver = true;
         
       }
+      //When the game is over, a restart button will appear
       if (gameOver == true) { 
         imageMode(CORNER);
         image(stopGame, 0, 0, width, height);
@@ -71,6 +72,7 @@ void draw() {
       if (catcher.checkCatcher(raindrops[i]) == true) {
         raindrops[i].goAway();
         score++;
+        //When the score increases, the time between falling raindrops will be decreased and they will start to fall faster
         threshold -= 15;
       }
     }
@@ -80,6 +82,7 @@ void draw() {
     //set the variable currentTime to equal milliseconds
     currentTime = millis();
     //A raindrop falls when 3 seconds have passed and the "time" is set back to zero and a new raindrop will fall
+    
     timeChange = currentTime - oldTime;
     if (timeChange >= threshold) { 
       oldTime = currentTime;
@@ -87,6 +90,8 @@ void draw() {
        }
   }
   println(die);
+  //Restart Button
+  //When pressed, the game will go to the start screen and the score will be set back to 0
   if(mousePressed == true && mouseX>rx && mouseX<rx+rw && mouseY>ry && mouseY<ry+rh){
     for (int i = 0; i < index; i++){
      raindrops[i].reset(); 
@@ -99,7 +104,7 @@ void draw() {
   }
 }
 
-
+//Changes the variable start to false so the game can begin
 void mousePressed() {
   start = false;
 }
