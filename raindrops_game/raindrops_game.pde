@@ -12,6 +12,7 @@ boolean start = true;
 int die;
 int rx,ry,rw,rh;
 PImage rainFall;
+int threshold = 3000;
 
 void setup() {
   rainFall = loadImage("scene.png");
@@ -70,6 +71,7 @@ void draw() {
       if (catcher.checkCatcher(raindrops[i]) == true) {
         raindrops[i].goAway();
         score++;
+        threshold -= 15;
       }
     }
     //displays the catcher
@@ -79,10 +81,10 @@ void draw() {
     currentTime = millis();
     //A raindrop falls when 3 seconds have passed and the "time" is set back to zero and a new raindrop will fall
     timeChange = currentTime - oldTime;
-    if (timeChange >= 3000) { 
+    if (timeChange >= threshold) { 
       oldTime = currentTime;
       index++;
-    }
+       }
   }
   println(die);
   if(mousePressed == true && mouseX>rx && mouseX<rx+rw && mouseY>ry && mouseY<ry+rh){
