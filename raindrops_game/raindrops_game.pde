@@ -112,7 +112,7 @@ void draw() {
   }
   //Congratulations Screen
   //When the player reaches a score of 25, they win the game
-  if(score == 5){
+  if(score == 35){
     for (int i = 0; i < index; i++){
      raindrops[i].goAway(); 
     }
