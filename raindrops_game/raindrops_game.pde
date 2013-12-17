@@ -49,11 +49,14 @@ void draw() {
     textAlign(CORNER);
     text("SCORE", 10, 35);
     text(score, 10,75);
+    textAlign(CENTER);
+       text("LIVES",255,35);
+       text(die,290,75);
     //displays raindrop and causes it to move
     for (int i = 0; i < index; i++) {
       raindrops[i].display();
       raindrops[i].move();
-      //if the raindrop hits the ground, it goes back to the top
+      //if the raindrop hits the ground, it is removed from the screen
      raindrops[i].die();
       if (die == 0) {
         gameOver = true;
@@ -92,9 +95,7 @@ void draw() {
       oldTime = currentTime;
       index++;
        }
-       textAlign(CENTER);
-       text("LIVES",255,35);
-       text(die,290,75);
+       
   }
   if(gameOver == true){
   //Restart Button
