@@ -13,6 +13,7 @@ int die;
 int rx,ry,rw,rh;
 PImage rainFall;
 int threshold = 3000;
+PImage winner;
 
 void setup() {
   rainFall = loadImage("scene.png");
@@ -30,6 +31,7 @@ void setup() {
   ry = 200;
   rw = 165;
   rh = 35;
+  winner = loadImage("winner.jpg");
  
 
 }
@@ -101,6 +103,12 @@ void draw() {
     gameOver = false;
     index = 1;
     score = 0;
+  }
+  //Congratulations Screen
+  //When the player reaches a score of 25, they win the game
+  if(score == 5){
+    imageMode(CORNER);
+    image(winner,0,0,width,height);
   }
 }
 
