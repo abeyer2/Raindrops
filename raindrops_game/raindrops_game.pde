@@ -96,7 +96,7 @@ void draw() {
        text("LIVES",255,35);
        text(die,290,75);
   }
-  
+  if(gameOver == true){
   //Restart Button
   //When pressed, the game will go to the start screen and the score will be set back to 0
   if(mousePressed == true && mouseX>rx && mouseX<rx+rw && mouseY>ry && mouseY<ry+rh){
@@ -109,9 +109,13 @@ void draw() {
     index = 1;
     score = 0;
   }
+  }
   //Congratulations Screen
   //When the player reaches a score of 25, they win the game
-  if(score == 25){
+  if(score == 5){
+    for (int i = 0; i < index; i++){
+     raindrops[i].goAway(); 
+    }
     imageMode(CORNER);
     image(winner,0,0,width,height);
   }
