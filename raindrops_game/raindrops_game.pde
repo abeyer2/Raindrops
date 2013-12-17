@@ -103,6 +103,7 @@ void draw() {
   if(mousePressed == true && mouseX>rx && mouseX<rx+rw && mouseY>ry && mouseY<ry+rh){
     for (int i = 0; i < index; i++){
      raindrops[i].reset(); 
+     index = 1;
     }
     die = 3;
     start = true;
