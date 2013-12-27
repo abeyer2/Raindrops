@@ -16,6 +16,12 @@ Steps to Make the Game
 
 *If the raindrop is caught, the raindrop will disappear from the screen
 
+*If the raindrop is not caught, the amount of lives will decrease by one
+
+*If the raindrop looses 3 lives, the game is over
+
+*If 35 raindrops are caught, the game is won
+
 Added Information
 =================
 GLITCHES/BUGS
