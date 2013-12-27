@@ -7,14 +7,19 @@ Raindrops will be falling from the sky at certain intervals.  A catcher will cat
 Steps to Make the Game
 ======================
 *Create the raindrop
+
 *Create the catcher
+
 *If the raindrop intersects with the catcher, the raindrop is caught
+
 *If the raindrop is caught, the score increases by one
+
 *If the raindrop is caught, the raindrop will disappear from the screen
 
 Added Information
 =================
 GLITCHES/BUGS
+
 When the game starts multiple raindrops will fall instead of one.  After this happens, though, the raindrops fall in sync with the timer.
 
 To start the game, you would have to click the start screen multiple times before it worked.  Problem FIXED-isolated the restart button to only the game over screen.
